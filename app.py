@@ -6,6 +6,10 @@ from oauth2client.service_account import ServiceAccountCredentials
 import re
 import os
 import json
+from pythainlp import word_tokenize
+
+def thai_tokenizer(text):
+    return word_tokenize(text, engine='newmm')
 
 # ======================================================================
 # 1. ระบบรักษาความปลอดภัย (ล้วงตู้เซฟ Google Sheets)
