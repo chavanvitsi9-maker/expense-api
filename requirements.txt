@@ -1,9 +1,11 @@
+python_version: 3.12.13
+scikit-learn==1.6.1
+pandas==2.2.3
+joblib==1.5.3
+pythainlp==5.3.7
+
 flask
 flask-cors
-scikit-learn
 gspread
 oauth2client
-pandas
-joblib
-pythainlp
 gunicorn
