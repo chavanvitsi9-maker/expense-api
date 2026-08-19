@@ -1,0 +1,9 @@
+flask
+flask-cors
+scikit-learn
+gspread
+oauth2client
+pandas
+joblib
+pythainlp
+gunicorn
