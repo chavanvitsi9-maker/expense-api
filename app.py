@@ -42,6 +42,17 @@ def connect_to_sheets():
 # ======================================================================
 # 2. โหลดสมองกล AI (ไฟล์ .pkl)
 # ======================================================================
+from pythainlp import word_tokenize
+import __main__  # <--- ทริกสำคัญ: นำเข้าไฟล์หลักของระบบ
+
+# 1. สร้างฟังก์ชันตัดคำ
+def thai_tokenizer(text):
+    return word_tokenize(text, engine='newmm')
+
+# 2. เอาฟังก์ชันของเรา ไปแปะทับไว้ในไฟล์หลัก (gunicorn) เพื่อให้ AI หาเจอ
+__main__.thai_tokenizer = thai_tokenizer
+
+# 3. โหลดโมเดล
 try:
     model = joblib.load('expense_model.pkl')
     print("✅ โหลดโมเดล expense_model.pkl สำเร็จ")
